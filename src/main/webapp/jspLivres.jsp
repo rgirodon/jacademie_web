@@ -4,16 +4,9 @@
 Collection<Livre> livres = (Collection<Livre>)request.getAttribute("livres");
 %>
 <html>
-<head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</head>
+
+<jsp:include page="headerBootstrap.jsp" />
+
 <title>Liste des livres</title>
 <body>
 <table class="table table-hover table-striped">
