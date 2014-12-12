@@ -9,12 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 /**
  * Servlet implementation class DedeServlet
  */
 @WebServlet(name="DedeServlet", urlPatterns="/TestServlet")
 public class DedeServlet extends HttpServlet {
        
+	private static Logger logger = Logger.getLogger(DedeServlet.class);
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,7 +31,7 @@ public class DedeServlet extends HttpServlet {
 
 		super.init(config);
 		
-		System.out.println("Hello Test : init method ");
+		logger.info("Hello Test : init method ");
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class DedeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 
-		System.out.println("Hello Test : GET method ");
+		logger.info("Hello Test : GET method ");
 	}
 
 	/**
@@ -45,6 +49,6 @@ public class DedeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 
-		System.out.println("Hello Test : POST method ");
+		logger.info("Hello Test : POST method ");
 	}
 }
