@@ -6,19 +6,8 @@
   	<description></description>
   	<servlet-class>org.jacademie.tdweb.servlet.HelloServlet</servlet-class>
   </servlet>
-  <servlet>
-  	<description>
-  	</description>
-  	<display-name>DedeServlet</display-name>
-  	<servlet-name>DedeServlet</servlet-name>
-  	<servlet-class>org.jacademie.tdweb.servlet.DedeServlet</servlet-class>
-  </servlet>
   <servlet-mapping>
   	<servlet-name>HelloServlet</servlet-name>
   	<url-pattern>/HelloServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>DedeServlet</servlet-name>
-  	<url-pattern>/DedeServlet</url-pattern>
   </servlet-mapping>
 </web-app>
