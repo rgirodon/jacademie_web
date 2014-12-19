@@ -49,7 +49,7 @@ public class LivreServlet extends HttpServlet {
 		
 		request.setAttribute("livres", livres);
 		
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/jspLivres.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/livres.jsp");
 		dispatcher.forward(request, response);
 	}
 
