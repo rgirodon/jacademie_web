@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.jacademie.tdweb.business.PriceCalculator;
 import org.jacademie.tdweb.domain.Livre;
 
 /**
@@ -21,6 +23,9 @@ import org.jacademie.tdweb.domain.Livre;
 public class LivreServlet extends HttpServlet {
        
 	private static Logger logger = Logger.getLogger(LivreServlet.class);
+	
+	@Inject
+	private PriceCalculator priceCalculator;
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,6 +53,10 @@ public class LivreServlet extends HttpServlet {
 		livres.add(livre3);
 		
 		request.setAttribute("livres", livres);
+		
+		Double price = 100.0D;
+		
+		logger.info("Price TTC = " + this.priceCalculator.calculateTTCPrice(price));
 		
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/livres.jsp");
 		dispatcher.forward(request, response);
